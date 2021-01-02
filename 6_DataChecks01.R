@@ -2,6 +2,7 @@
 # run 4
 # The practice and prescription data are joined using practice id 
 # This to check the dataset for outliers etc prior to any analyusis.
+# Creates the no_outliers file
 
 library(dplyr)
 
@@ -29,7 +30,7 @@ str(docs_in)
 # --------------------------------------------------
 
 # Open data file to review contents
-p_data <- read.csv(paste(datapath,"grep " , sep = "/"))
+p_data <- read.csv(paste(datapath,"practice_summary_info.csv" , sep = "/"))
 # p_data <- read.csv("data/summary_info.csv")
 
 head(p_data)
@@ -840,4 +841,18 @@ junk <- subset(pr_main, junk$items_avg_patient_ratio < 2.5 )
 junk
 
 
+# write no_outliers file
+
+datapath <- "processed_data"
+datapath <- paste(main_path, datapath, sep = "/")
+datapath
+
+no_outliers_file <- "no_outliers.csv"
+no_outliers_file <- paste(datapath, no_outliers_file, sep = "/")
+no_outliers_file
+
+write.csv(file=no_outliers_file, x=pr_main, quote=TRUE, row.names = FALSE)
+
 # EOF #######################################################
+
+
