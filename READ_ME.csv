@@ -1,0 +1,52 @@
+Code_run_order,File_name,Data_in,Data_out,Notes
+Order,Code,Data In,Data Out,Notes
+1,1_Summarise_Prescriptions_Chapters,years/*.zip,,
+1,1_Summarise_Prescriptions_Chapters,,*_summary.csv,
+2,2_Summarise_Avg_Prescriptions,,practice_summary_info.csv,
+2,2_Summarise_Avg_Prescriptions,*_summary.csv,,
+3,3_Clean_Practices_API,gp-practice-reference-file*,,
+3,3_Clean_Practices_API,,cleaned_practice_data.csv,
+3,3_Clean_Practices_API,postcodes_posttowns.csv,,
+4,4_Practice_Clustering,cleaned_practice_data.csv,,
+4,4_Practice_Clustering,SOA2011.shp,,manual
+4,4_Practice_Clustering,,geo_cleaned_practice_data.csv,
+5,Convert_LatLong_to_Postcode,clusters_SOA.csv,clusters_SOA.csv,creates and writes
+5,Convert_LatLong_to_Postcode,atlas_data.censored.csv,,manual
+5,Convert_LatLong_to_Postcode,atd_lat_long.csv,atd_lat_long.csv,creates and writes
+5,Convert_LatLong_to_Postcode,,clusters_SA.csv,
+5,Convert_LatLong_to_Postcode,,grouped_clusters.csv,
+6,DataChecks01,,no_outliers.csv,
+6,DataChecks01,geo_cleaned_practice_data.csv,,
+6,DataChecks01,practice_summary_info.csv,,
+7,DataChecks02,,master_list.csv,
+7,DataChecks02,no_outliers.csv,,
+7,DataChecks02,geo_cleaned_practice_data.csv,,
+7,DataChecks02,Geographic Data (statistical geographies)_SOA.csv,,manual
+7,DataChecks02,practice_summary_info.csv,,
+7,DataChecks02,clusters_SOA.csv,,
+8,DataChecks03,,nearest_docs_24.csv,
+8,DataChecks03,,nearest_docs_42.csv,
+8,DataChecks03,no_outliers.csv,,
+8,DataChecks03,geo_cleaned_practice_data.csv,,
+8,DataChecks03,grouped_clusters.csv,,
+10,ComponentChecks01,geo_cleaned_practice_data.csv,,
+10,ComponentChecks01,no_outliers.csv,,
+10,ComponentChecks01,Geographic Data (statistical geographies)_SOA.csv,,manual
+10,ComponentChecks01,master_list.csv,,
+10,ComponentChecks01,practice_summary_info.csv,,
+10,ComponentChecks01,grouped_clusters.csv,,
+10,ComponentChecks01,nearest_docs_24.csv,,
+10,ComponentChecks01,nearest_docs_42.csv,,
+11,ComponentChecks02,no_outliers.csv,,
+11,ComponentChecks02,geo_cleaned_practice_data.csv,,
+11,ComponentChecks02,Geographic Data (statistical geographies)_SOA.csv,,manual
+11,ComponentChecks02,master_list.csv,,
+11,ComponentChecks02,practice_summary_info.csv,,
+11,ComponentChecks02,grouped_clusters.csv,,
+11,ComponentChecks02,nearest_docs_24.csv,,
+11,ComponentChecks02,nearest_docs_42.csv,,
+15,SA_SOA_rel_afil,clusters_SOA.csv,,
+15,SA_SOA_rel_afil,Geographic Data (statistical geographies)_SOA.csv,,manual
+15,SA_SOA_rel_afil,Geographic Data (statistical geographies)_SA.csv,,manual
+15,SA_SOA_rel_afil,ninis2_KS212NI (s).csv,,manual
+15,SA_SOA_rel_afil,clusters_SA.csv,,
